@@ -1,0 +1,54 @@
+@import "tailwindcss";
+
+:root {
+  --background: #ffffff;
+  --foreground: #1e293b; /* slate-800 for softer, more professional text reading */
+  --primary: #0a2540;     /* Deep navy blue */
+  --primary-hover: #071a2e;
+  --accent: #0284c7;      /* Soft sky blue */
+  --accent-light: #e0f2fe;
+  --supporting: #f8fafc;  /* Clean light gray (slate-50) */
+  --border: #e2e8f0;      /* slate-200 */
+}
+
+@theme {
+  --color-primary: var(--primary);
+  --color-primary-hover: var(--primary-hover);
+  --color-accent: var(--accent);
+  --color-accent-light: var(--accent-light);
+  --color-supporting: var(--supporting);
+  --color-border: var(--border);
+  
+  --font-sans: var(--font-geist-sans), system-ui, sans-serif;
+  --font-serif: var(--font-serif), Georgia, serif;
+}
+
+body {
+  background-color: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans);
+}
+
+/* Custom styles for academic elegance */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-serif);
+}
+
+.nav-link {
+  position: relative;
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: -4px;
+  left: 0;
+  background-color: var(--accent);
+  transition: width 0.2s ease;
+}
+
+.nav-link:hover::after {
+  width: 100%;
+}
